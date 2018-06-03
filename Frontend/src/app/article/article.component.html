@@ -5,22 +5,17 @@
         <div class="col-12">
           <img class="rounded-circle float-left" src="http://admin.carpoolsonora.com/Content/default-user.jpg" width="70">
           <h6 class="article-title text-truncate">
-            <a routerLink="/usuario">Nombre usuario</a>
+            <a routerLink="/usuario">{{ getUser(article.userId).name }}</a>
             &nbsp;
-            <span class="text-muted">@usuario</span>
+            <span class="text-muted">@{{ getUser(article.userId).username }}</span>
           </h6>
         </div>
         <div class="col-12">
-          <h1>Titulo</h1>
+          <h1>{{ article.title }}</h1>
           <p class="text-justify">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra fermentum lorem nec ultrices. Sed eros ligula,
-            congue ac mi et, placerat aliquam eros. Nunc dignissim, eros sed imperdiet sollicitudin, velit ligula convallis
-            metus, vitae iaculis tellus dolor vel quam. In eu volutpat metus. Morbi luctus blandit sem at laoreet. Etiam
-            auctor gravida felis, eget blandit leo eleifend ac. Cras et erat dapibus, semper turpis vel, sodales ligula.
-            Etiam gravida erat sit amet elit ullamcorper mattis vitae sed lectus. Ut ligula nisi, ultricies eget lacinia
-            tristique, suscipit eu nibh. Duis bibendum libero enim, nec bibendum felis finibus a.
+            {{ article.description }}
           </p>
-          <a routerLink="/tag" class="badge badge-secondary mr-2" *ngFor="let i of [1,2,3]">Tag {{ i }}</a>
+          <a routerLink="/tag" class="badge badge-secondary mr-2" *ngFor="let t of article.tags">{{ t }}</a>
         </div>
       </div>
     </div>
@@ -51,12 +46,9 @@
   <div class="card mb-3">
     <div class="card-header">Comentario</div>
     <div class="card-body">
-      <form>
+      <form [formGroup]="form">
         <div class="form-group mb-1">
-          <input class="form-control form-control-sm" placeholder="Titulo">
-        </div>
-        <div class="form-group mb-1">
-          <textarea class="form-control form-control-sm" placeholder="Descripción"></textarea>
+          <textarea class="form-control form-control-sm" placeholder="Descripción" formControlName="comment"></textarea>
         </div>
       </form>
     </div>

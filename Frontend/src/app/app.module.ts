@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AutoCompleteModule, MultiSelectModule } from '@syncfusion/ej2-ng-dropdowns';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -11,6 +13,10 @@ import { APP_ROUTES } from './app.routing';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { ArticleComponent } from './article/article.component';
+import { ArticleService } from './shared/services/articles.service';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { UsersService } from './shared/services/users.service';
+import { ProjectsService } from './shared/services/projects.service'; 
 
 @NgModule({
   declarations: [
@@ -24,9 +30,17 @@ import { ArticleComponent } from './article/article.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot(APP_ROUTES),
-    AngularFireModule.initializeApp(environment.firebase)
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AutoCompleteModule,
+    MultiSelectModule
   ],
-  providers: [],
+  providers: [
+    ArticleService,
+    UsersService,
+    ProjectsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

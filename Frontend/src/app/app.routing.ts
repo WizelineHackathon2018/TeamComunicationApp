@@ -11,7 +11,7 @@ export const APP_ROUTES: Routes = [
         data: { title: 'Home' }
     },
     {
-        path: 'article',
+        path: 'article/:id',
         component: ArticleComponent,
         data: { title: 'Articulo' }
     },
