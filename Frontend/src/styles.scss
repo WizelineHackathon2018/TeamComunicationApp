@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+section {
+    padding-top: 70px;
+}
+
+textarea {
+    resize: none;
+}
+
+.selectable {
+    cursor: pointer;
+}
+
+.article-title {
+    margin-left: 60px;
+    line-height: 50px;
+}

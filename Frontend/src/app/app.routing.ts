@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { ArticleComponent } from './article/article.component';
 
 export const APP_ROUTES: Routes = [
     {
@@ -10,14 +11,19 @@ export const APP_ROUTES: Routes = [
         data: { title: 'Home' }
     },
     {
+        path: 'article',
+        component: ArticleComponent,
+        data: { title: 'Articulo' }
+    },
+    {
         path: 'login',
         component: LoginComponent,
-        data: { title: 'Login' }
+        data: { title: 'Inicio de sesión' }
     },
     {
         path: 'register',
         component: RegisterComponent,
-        data: { title: 'Register' }
+        data: { title: 'Registro' }
     },
     {
         path: '',

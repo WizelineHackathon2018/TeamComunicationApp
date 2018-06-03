@@ -1,3 +1,78 @@
-<p>
-  home works!
-</p>
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-9">
+      <div class="card mb-3">
+        <div class="card-body">
+          <div>
+            <img class="rounded-circle float-left" src="http://admin.carpoolsonora.com/Content/default-user.jpg" width="50">
+            <h6 class="article-title text-truncate">
+              <a routerLink="/usuario">Nombre usuario</a>
+              &nbsp;
+              <span class="text-muted">@usuario</span>
+            </h6>
+          </div>
+          <form>
+            <div class="form-group mb-1">
+              <input class="form-control form-control-sm" placeholder="Titulo">
+            </div>
+            <div class="form-group mb-1">
+              <textarea class="form-control form-control-sm" placeholder="Descripción"></textarea>
+            </div>
+            <div class="form-group mb-1">
+              <input class="form-control form-control-sm" placeholder="Tags">
+            </div>
+          </form>
+        </div>
+        <div class="card-footer">
+          <div class="float-right">
+            <button class="btn btn-primary btn-sm">Crear artículo</button>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" *ngFor="let i of [1,2,3]">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+              <img class="rounded-circle float-left" src="http://admin.carpoolsonora.com/Content/default-user.jpg" width="50">
+              <h6 class="article-title text-truncate">
+                <a routerLink="/article">Nombre usuario</a>
+                &nbsp;
+                <span class="text-muted">@usuario</span>
+              </h6>
+            </div>
+            <div class="col-12">
+              <h6 class="text-truncate">Titulo</h6>
+              <p class="article-text text-truncate">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis egestas, elit scelerisque facilisis porta, leo lectus molestie
+                ligula, ac viverra velit tortor eu nulla.
+              </p>
+              <a routerLink="/tag" class="badge badge-secondary mr-2" *ngFor="let i of [1,2,3]">Tag {{ i }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="float-left">
+            <span class="text-muted float-right">8 comentarios</span>
+          </div>
+          <div class="float-right">
+            <a routerLink="/article" class="btn btn-primary btn-sm float-right">Ver más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card mb-3">
+        <div class="card-body">
+          <p class="text-muted mb-1">Proyectos</p>
+          <a routerLink="/project" class="btn btn-info btn-block" *ngFor="let i of [1,2,3]">PROJECT {{ i }}</a>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-body">
+          <p class="text-muted mb-1">Tags</p>
+          <a routerLink="/tag" class="badge badge-secondary mr-2" *ngFor="let i of [1,2,3]">Tag {{ i }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
